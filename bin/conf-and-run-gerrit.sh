@@ -55,6 +55,10 @@ else
   sed -i  's/__GIT_SERVER_PASSWORD__/'${GIT_SERVER_PASSWORD}'/g' ${GERRIT_SITE}/etc/replication.config
   sed -i  's/__GIT_SERVER_PROJ_ROOT__/'${GIT_SERVER_PROJ_ROOT}'/g' ${GERRIT_SITE}/etc/replication.config
 
+  # Configure Gerrit for Postgres
+  echo ">> Configuring Gerrit to use Postgres and replace variable DB_PASSWORD"
+  sed -i  's/__DB_PASSWORD__/'${DB_PASSWORD}'/g' ${GERRIT_SITE}/etc/gerrit.config
+
   # Configure Gerrit
   echo ">> Configure Git Config and change AUTH_TYPE"
   sed -i  's/__AUTH_TYPE__/'${AUTH_TYPE}'/g' ${GERRIT_SITE}/etc/gerrit.config
