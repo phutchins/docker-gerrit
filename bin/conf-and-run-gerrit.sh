@@ -58,7 +58,7 @@ else
   echo "Replacing GIT_SERVER_PASSWORD"
   sed -i  's/__GIT_SERVER_PASSWORD__/'${GIT_SERVER_PASSWORD}'/g' ${GERRIT_SITE}/etc/replication.config
   echo "Replacing GIT_SERVER_PROJ_ROOT"
-  sed -i  's/__GIT_SERVER_PROJ_ROOT__/'${GIT_SERVER_PROJ_ROOT}'/g' ${GERRIT_SITE}/etc/replication.config
+  sed -i  's/__GIT_SERVER_PROJ_ROOT__/'\${GIT_SERVER_PROJ_ROOT}'/g' ${GERRIT_SITE}/etc/replication.config
 
   # Configure Gerrit for Postgres
   echo ">> Configuring Gerrit to use Postgres and replace variable DB_PASSWORD"
